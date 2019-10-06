@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "name": "Harry Potter",
+        "image": "https://imgur.com/oxI6ZLg.jpg" 
+    },
+    {
+        "id": 2,
+        "name": "Hermione Granger",
+        "image": "https://i.imgur.com/BW0Jgtb.jpg" 
+    },
+    {
+        "id": 3,
+        "name": "Ron Weasley",
+        "image": "https://imgur.com/soOVb1A.jpg" 
+    },
+    {
+        "id": 4,
+        "name": "Lord Voldemort",
+        "image": "https://imgur.com/gag6wSX.jpg" 
+    },
+    {
+        "id": 5,
+        "name": "Professor Albus Dumbledore",
+        "image": "https://imgur.com/tQdr9hx.jpg" 
+    },
+    {
+        "id": 6,
+        "name": "Neville Longbottom",
+        "image": "https://imgur.com/QZkgxRa.jpg" 
+    },
+    {
+        "id": 7,
+        "name": "Professor Severus Snape",
+        "image": "https://imgur.com/Fubk6R8.jpg" 
+    },
+    {
+        "id": 8,
+        "name": "Draco Malfoy",
+        "image": "https://imgur.com/esgZ8lq.jpg" 
+    },
+    {
+        "id": 9,
+        "name": "Sirius Black",
+        "image": "https://imgur.com/61lyHhO.jpg" 
+    },
+    {
+        "id": 10,
+        "name": "Bellatrix Lestrange",
+        "image": "https://imgur.com/gOYttJ8.jpg" 
+    },
+    {
+        "id": 11,
+        "name": "Luna Lovegood",
+        "image": "https://imgur.com/wG1xvQg.jpg" 
+    },
+    {
+        "id": 12,
+        "name": "Professory Minera McGonagall",
+        "image": "https://imgur.com/aE056aZ.jpg" 
+    }    
+]
