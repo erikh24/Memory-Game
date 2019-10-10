@@ -1,5 +1,10 @@
-jumbotron {
-    color: blue;
+div {
+    background-color: #fdd441;
+    color: #6f131e;
+    /* padding: 45px; */
     text-align: center;
 }
 
+h1, h3 {
+    text-shadow: 2px 2px white;
+}

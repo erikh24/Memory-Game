@@ -1,6 +1,10 @@
 .wrapper {
     padding-top: 50px;
-    background: #ECEFF1;
+    /* background-image: url(https://imgur.com/g9cPt68.jpg);
+    background-size: 115%;
+    background-position: center;
+    background-repeat: no-repeat; */
+    background: #6f131e;
     height: 100%;
     display: flex;
     flex-flow: row wrap;

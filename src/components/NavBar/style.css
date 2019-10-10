@@ -1,0 +1,21 @@
+#currentScore {
+    color: #fdd441;
+    text-shadow: 3px 3px black;
+}
+
+#topScore {
+    color: #fdd441;
+    text-shadow: 3px 3px black;
+}
+
+#winLose {
+    color: #fdd441;
+    text-shadow: 3px 3px black;
+}
+
+nav li {
+    display: inline-block;
+    padding: 30px;
+    font-size: 30px;
+}
+

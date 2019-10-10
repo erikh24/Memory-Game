@@ -1,65 +1,88 @@
-// import React, { Component } from 'react';
-// import logo from './logo.svg';
-// import './App.css';
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
 import React, { Component } from "react";
 import CharacterCard from "./components/CharacterCard";
 import Wrapper from "./components/Wrapper";
-import Title from "./components/Title";
 import characters from "./characters.json";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import NavBar from "./components/NavBar";
 
-
+// Reorganize characters
+function reorganize(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+};
 
 class App extends Component {
   // Setting this.state.friends to the friends json array
   state = {
-    characters
+    characters,
+    currentScore: 0,
+    topScore: 0,
+    winLose: "",
+    clicked: []
   };
 
-  // removeFriend = id => {
-  //   // Filter this.state.friends for friends with an id not equal to the id being removed
-  //   const friends = this.state.friends.filter(friend => friend.id !== id);
-  //   // Set this.state.friends equal to the new friends array
-  //   this.setState({ friends });
-  // };
+  handleClick = id => {
+    if (this.state.clicked.indexOf(id) === -1) {
+      this.increaseScore();
+      this.setState({ clicked: this.state.clicked.concat(id) });
+    } else {
+      this.resetGame();
+    }
+  };
+
+  // increase score by 1
+  increaseScore = () => {
+    var newScore = this.state.currentScore + 1;
+    this.setState({
+      currentScore: newScore,
+      winLose: ""
+    });
+    if (newScore >= this.state.topScore) {
+      this.setState({ topScore: newScore });
+    }
+    this.shuffle();
+  };
+
+  // handle game reset
+  resetGame = () => {
+    this.setState({
+      currentScore: 0,
+      topScore: this.state.topScore,
+      winLose: "Please play again.",
+      clicked: []
+    });
+    this.shuffle();
+  }
+
+  // shuffle
+  shuffle = () => {
+    let reorganizedCharacters = reorganize(characters);
+    this.setState({ friends: reorganizedCharacters });
+  };
 
   // Map over this.state.friends and render a FriendCard component for each friend object
   render() {
     return (
       <>
         <Header />
-          <Wrapper>
-          <Title >Harry Potter Characters</Title>
+        <Wrapper>
+          <NavBar
+            score={this.state.currentScore}
+            topScore={this.state.topScore}
+            winLose={this.state.winLose}
+          />
+
           {this.state.characters.map(character => (
             <CharacterCard
-              // removeFriend={this.removeFriend}
               id={character.id}
               key={character.id}
               name={character.name}
               image={character.image}
+              handleClick={this.handleClick}
             />
           ))}
         </Wrapper>
