@@ -30,5 +30,5 @@ None required.
 
 ****
 
-## The code can be found on my GitHub page
-- https://erikh24.github.io/Memory-Game/
+## Click below to launch the app:
+- https://harry-potter-memory-game-8812.herokuapp.com/
